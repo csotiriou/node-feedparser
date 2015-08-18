@@ -741,7 +741,7 @@ FeedParser.prototype.handleItem = function handleItem (node, type, options){
     ;
 
   if (normalize) {
-    ['title','description','summary','date','pubdate','pubDate','link','guid','author','comments', 'origlink'].forEach(function (property){
+    ['title','description','summary','date','pubdate','publDate','publdate','pubDate','link','guid','author','comments', 'origlink'].forEach(function (property){
       item[property] = null;
     });
     item.image = {};
@@ -769,6 +769,8 @@ FeedParser.prototype.handleItem = function handleItem (node, type, options){
         item.description = utils.get(el);
         break;
       case('pubdate'):
+      case('publDate'):
+      case('publdate'):
       case('published'):
       case('issued'):
       case('modified'):
